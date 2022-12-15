@@ -1,5 +1,5 @@
 import { Content } from "../entities/content";
-import { Notification } from "../entities/notification";
+import { Notification } from "@app/entities/notification";
 import { NotificationsRepository } from "../repositories/notifications-repository";
 import { Injectable } from "@nestjs/common";
 
@@ -28,6 +28,8 @@ export class SendNotification {
 
         await this.notificationsRepository.create(notification);
 
-        return { notification };
+        return {
+            notification,
+        };
     }
 }
